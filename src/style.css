@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --sidebar-width: 260px;
+    --navbar-height: 60px;
+
+    --bg-color: #666;
+    --bg-color-light: #999;
+    --bg-color-primary: #efedfe;
+    --bg-color-secondary: #F3F6F9;
+
+    --pink-primary: rgb(203, 70, 255);
+}
+
+html,
+body,
+#app {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}

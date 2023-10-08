@@ -1,18 +1,35 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="home w-full h-full">
+    <Navbar />
+    <Sidebar />
+    <div class="content w-full h-full">
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import { Component, Vue } from "vue-property-decorator";
+import Sidebar from "@/components/Sidebar.vue";
+import Navbar from "@/components/Navbar.vue";
 
 @Component({
   components: {
-    HelloWorld,
+    Sidebar,
+    Navbar,
   },
 })
 export default class HomeView extends Vue {}
 </script>
+
+<style scoped>
+.content {
+  background: var(--bg-color-secondary);
+  position: relative;
+  width: calc(100vw - var(--sidebar-width));
+  left: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+  top: var(--navbar-height);
+  overflow-y: auto;
+}
+</style>
